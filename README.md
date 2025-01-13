@@ -1,3 +1,5 @@
+**I'm still working on this. Need to add the interactive elements. The HTML and CSS needs tidying.**
+
 # Frontend Mentor - Job listings with filtering
 
 ![Design preview for the Job listings with filtering coding challenge](./design/desktop-preview.jpg)
