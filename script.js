@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
     const myRequest = new Request("./data.json");
+    const sectTag = document.querySelector('.job-list');
 
     // Function to filter jobs based on selected criteria
     function filterJobs(jobs, selectedCriteria) {
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="job-details r4">
                             <ul id="tags${jobs.id}" class="sect-tags">
                                 <li class="job-section sect-tag-item sect-role">
-                                    <button id="tag${jobs.id}" class="filter-tag-btn" data-tag="${jobs.role}">${jobs.role}</button>
+                                    <button id="tag${jobs.id}" class="filter-tag-btn" data-type="role" data-tag="${jobs.role}">${jobs.role}</button>
                                 </li>
                             </ul>
                         </div>
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     levelitem.classList.add('job-section');
                     levelitem.classList.add('sect-tag-item');
                     levelitem.classList.add('sect-level');
-                    levelitem.innerHTML = `<button id="tag${jobs.id}" class="filter-tag-btn" data-tag="${jobs.level}">${jobs.level}</button>`;
+                    levelitem.innerHTML = `<button id="tag${jobs.id}" class="filter-tag-btn"  data-type="level" data-tag="${jobs.level}">${jobs.level}</button>`;
                     sectlevel.appendChild(levelitem);
 
                     if (Array.isArray(jobs.tools)) {
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             toolitem.classList.add('job-section');
                             toolitem.classList.add('sect-tag-item');
                             toolitem.classList.add('sect-tools');
-                            toolitem.innerHTML = `<button id="tag${jobs.id}" class="filter-tag-btn" data-tag="${jobs.tools[i]}">${jobs.tools[i]}</button>`;
+                            toolitem.innerHTML = `<button id="tag${jobs.id}" class="filter-tag-btn"  data-type="tools"  data-tag="${jobs.tools[i]}">${jobs.tools[i]}</button>`;
                             secttools.appendChild(toolitem);
                         }
                     }
@@ -103,14 +104,23 @@ document.addEventListener('DOMContentLoaded', () => {
                             roleitem.classList.add('job-section');
                             roleitem.classList.add('sect-tag-item');
                             roleitem.classList.add('sect-lang');
-                            roleitem.innerHTML = `<button id="tag${jobs.id}" class="filter-tag-btn" data-tag="${jobs.languages[i]}">${jobs.languages[i]}</button>`;
+                            roleitem.innerHTML = `<button id="tag${jobs.id}" class="filter-tag-btn" data-type="lang" data-tag="${jobs.languages[i]}">${jobs.languages[i]}</button>`;
                             sectrole.appendChild(roleitem);
                         }
                     }
                 }
             })
             .catch(console.error);
+            
+
+            sectTag.addEventListener("click", (e) => {
+                if(e.target.classList.contains('filter-tag-btn')){
+                    console.log(e.target);
+                }
+            });
     }
 
     getData();
-});
+    
+// });
+
