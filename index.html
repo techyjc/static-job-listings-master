@@ -8,7 +8,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="script.js" defer></script>
+  <!-- <script type="module" src="script.js" defer></script> -->
   <title>Frontend Mentor | Job Listings</title>
 </head>
 
@@ -16,24 +16,55 @@
 
   <main class="main">
 
-    <section class="filter">
-      <ul class="filter-list">
+    <section class="job-filter">
+      <ul class="jobfilter-list">
         <li class="filter-item">css<button class="filter-remove-btn">X</button></li>
       </ul>
       <button class="filter-clear-btn">Clear</button>
     </section>
+
     <section class="jobs-wrapper">
       <ul class="job-list">
-
+        <li id="jobid1" class="job-entry">
+          <img src="./images/manage.svg" alt="">
+          <div class="job-left">
+            <ul class="job-info job-top">
+              <li class="job-company">Manage</li>
+              <li class="job-new" data-new="">New</li>
+              <li class="job-featured" data-featured="">Featured</li>
+            </ul>
+            <ul class="job-info job-mid">
+              <il class="job-position">Software Engineer</il>
+            </ul>
+            <ul class="job-info job-bottom">
+              <li class="job-postedat">1w ago</li>
+              <li class="job-contract">Full Time</li>
+              <li class="job-location">Worldwide</li>
+            </ul>
+          </div>
+            <ul class="job-info job-tags">
+              <li class="job-tag">
+                <button id="" class="job-tag-btn job-role" data-tag="">Fullstack</button>
+              </li>
+              <li class="job-tag">
+                <button id="" class="job-tag-btn job-language" data-tag="">JavaScript</button>
+              </li>
+              <li class="job-tag">
+                <button id="" class="job-tag-btn job-language" data-tag="">Ruby</button>
+              </li>
+              <li class="job-tag">
+                <button id="" class="job-tag-btn job-tools" data-tag="">Sass</button>
+              </li>
+            </ul>
+        </li>
       </ul>
     </section>
-
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
   </main>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 
 </html>
